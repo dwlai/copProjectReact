@@ -1,0 +1,289 @@
+// -------------------------------------------------
+// Site Specific Variables
+// -------------------------------------------------
+
+// Example, group similar variables, only use variables for common colours & values
+// $all-lowercase: value;
+
+// breakpoints
+$bp-max-tablet: 991px;
+$bp-min-desktop: 992px;
+// a breakpoint for old oxford monitors, it really only starts at 1024px, but JAM designs seems to need a minimum thats slightly greater than 1024px, so picked the next closest bootstrap bp
+$bp-max-om: 1199px;
+
+$font-condensed: 'FlamaCondensed-Medium', Helvetica, Arial, sans-serif;
+$font-condensed-light: 'FlamaCondensed-Light', Helvetica, Arial, sans-serif;
+$font-book: 'Flama-Book', Helvetica, Arial, sans-serif;
+$font-medium: 'Flama-Medium', Helvetica, Arial, sans-serif;
+$color-white: #ffffff;
+$color-yellow: #fef035;
+$color-yellow-alt: #fff200;
+$color-teal-grey: #35495a;
+$color-teal-grey-alt: #35495a;
+$color-teal-grey-2: #374f66;
+$color-light-grey: #efefef;
+$color-light-grey-alt: #d8d8d8;
+$color-grey: #686868;
+$color-medium-grey: #999999;
+$color-black: #000000;
+
+$font-size-x-large: 80px;
+$font-size-large: 60px;
+$font-size-medium: 36px;
+$font-size-sm-medium: 16px;
+$font-size-small: 14px;
+
+$line-height: 1.55;
+
+
+body {
+  font-family: $font-book;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font-condensed;
+}
+
+p{
+	line-height: $line-height;
+	color: $color-grey;
+	font-size: $font-size-small;
+	font-weight: 400;
+	font-family: $font-book;
+}
+
+h1{
+	font-family: $font-condensed;
+	font-size: $font-size-x-large;
+	line-height: 1;
+}
+
+h2{
+	font-family: $font-condensed;
+	font-size: $font-size-large;
+	line-height: 1;
+}
+
+h3{
+	font-family: $font-condensed;
+	font-size: $font-size-medium;
+	line-height: 1;
+}
+
+h4{
+	font-family: $font-medium;
+	font-size: $font-size-sm-medium;
+	line-height: 1.7;
+	color: $color-grey;
+}
+
+h5 {
+	font-family: $font-book;
+	font-size: $font-size-sm-medium;
+	line-height: 1.7;
+	color: $color-grey;
+}
+
+.font-medium {
+  font-family: $font-medium;
+}
+
+/* ==================================================
+  Elements
+  ================================================== */
+
+/* ==================================================
+  Overides default styles
+  ================================================== */
+
+  // Removes gutter padding from column
+  .no-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .no-padding-left {
+  	padding-left: 0;
+  	padding-right: 0.9375rem;
+  }
+
+  .no-padding-right {
+  	padding-left: 0.9375rem;
+  	padding-right: 0;
+  }
+
+  // Adds custom padding to grid container
+  .padding-x {
+  	padding: 0 6.5rem;
+  }
+
+  // Custom padding for grid container
+  .padding-left {
+    padding-left: 2.5rem;
+  }
+
+  // Custom padding to grid container
+  .padding-right {
+    padding-right: 2.5rem;
+  }
+
+  // Custom clearfix
+  .clearfix-10rem {
+  	height: 3.5rem;
+  	clear: both;
+  }
+
+  // Custom column size - 80% width centred
+  .col-80 {
+  	width: 80%;
+  	margin: 0 auto;
+  }
+
+/* ==================================================
+  3-Column layout and paragraph style - on About Us page
+  ================================================== */
+
+	.section-col1 {
+		padding-right: 3rem;
+	}
+
+	.section-col2 {
+		padding-right: 3rem;
+	}
+
+	.section-col3 {
+		padding-left: 3rem;
+	}
+
+	.section-col-title {
+		font-family: $font-medium;
+		font-size: 24px;
+		padding-bottom: 40px;
+		line-height: 1.3;
+	}
+
+	.col-p20 {
+		font-family: $font-book;
+		font-size: 20px;
+		line-height: 1.5;
+		padding-bottom: 35px;
+	}
+
+	.col-p20-b {
+		font-family: $font-medium;
+		font-size: 20px;
+		line-height: 1.5;
+		padding-bottom: 35px;
+	}
+
+	.col-p16 {
+		font-family: $font-book;
+		font-size: 16px;
+		line-height: 1.5;
+		padding-bottom: 25px;
+	}
+
+	.col-p14 {
+		font-family: $font-book;
+		font-size: 14px;
+		line-height: 1.5;
+		padding-bottom: 25px;
+	}
+
+/* ==================================================
+  Breakpoints
+  ================================================== */
+
+$grid-breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+$container-max-widths: (
+	xs: 450px,	
+ 	sm: 540px,
+	md: 720px,
+	lg: 980px,
+	xl: 1250px,
+);
+
+
+
+/* ==================================================
+  Media Queries & Responsive Styling
+  ================================================== */
+
+@media screen and (min-width: 1401px) and (max-width: 2700px) {
+
+    .padding-x {
+        padding: 0 6.5rem 0 9.5rem;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1400px) {
+
+    .padding-x {
+       padding: 0 4.9rem;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+
+    .padding-x {
+       padding: 0 3.5rem;
+    }
+ }
+
+ // ALL tablets)
+@media (max-width: 1024px) {
+}
+
+// ALL tablet devices (tablets - portrait and landscape, 768px and up)
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+// Large tablet devices (tablets - landscape, 992px and up)
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+}
+
+// Medium devices (tablets - portrait and landscape, 768px and up)
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+// ALL phone devices (phones - landscape, 544px and up)
+@media screen and (min-width: 320px) and (max-width: 767px) {
+}
+
+// Small devices (phones - landscape, 544px and up)
+@media screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+ // Extra small devices (phones - portrait, less than 544px)
+@media screen and (min-width: 320px) and (max-width: 479px) {
+}
+
+
+
+// All phone devices (320px and up)
+@media (max-width: 767px) {
+
+	h1 {
+        font-size: 37px !important;
+    }
+    
+    h2 {
+        font-size: 30px !important;
+    }
+
+    h3 {
+        font-size: 30px !important;
+    }
+
+
+}
+
+
+

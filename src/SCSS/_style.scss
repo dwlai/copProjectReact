@@ -1,0 +1,15 @@
+/* ========================================================================
+ * General common styling
+ *
+ * ========================================================================
+ * Copyright 2016 Bootbites.com (unless otherwise stated)
+ * For license information see: http://bootbites.com/license
+ * ======================================================================== */
+
+@import '_variables';
+@import '_mixins';
+
+* {
+  font-family:arial;
+  color:blue;
+}
