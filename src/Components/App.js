@@ -11,9 +11,7 @@ export default class MyComponent extends React.Component
     return (
     <div>
       <NavMain />
-        {React.cloneElement(this.props.children, {
-          key: location.pathname
-        })}
+        {React.cloneElement(this.props.children, {key: location.pathname})}
     </div>
     )
   }
