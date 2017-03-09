@@ -99,11 +99,6 @@ export default class OfficerPost extends React.Component
 					
 			</div>
 
-		
-
-
-
-
 		);
   }
 }
