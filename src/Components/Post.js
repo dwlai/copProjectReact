@@ -11,12 +11,12 @@ export default class Post extends React.Component{
 					<div className="post">
 					
 						<div classNme="postHeader">
-							<p className = "postFirstName">Post from ROGER</p>
-							<p className = "postDate">Posted on 2017/12/12 18:00:00</p>
+							<p className = "postFirstName">Post from:{this.props.posterFirstName}</p>
+							<p className = "reportNumber">Report #:{this.props.reportNumber}</p>
+							<p className = "postDate">Date: {this.props.date}</p>
 						</div>
 						<div className="postBody">
-							<p className="postMessage"> Great job today.  YAY! YAY YAY YAY
-							 YAY! YAY YAY YAYV YAY! YAY YAY YAY</p>
+							<p className="postMessage">{this.props.postMessage}</p>
 						</div>
 
 

@@ -1,12 +1,18 @@
 import React from 'react';
 import Post from './Post';
+import PostStore from "./Common/PostStore";
+import OfficerStore from "./Common/OfficerStore";
+
 export default class OfficerPost extends React.Component 
 {
 	constructor(){
+		
 		super();
 		this.state = {
 
-			optionalFields:"optionalFields"
+			optionalFields:"optionalFields",
+			officers: OfficerStore.getOfficers(),
+			posts : PostStore.getPosts()
 		}
 
 
@@ -25,19 +31,35 @@ export default class OfficerPost extends React.Component
 		this.setState(state);
 	}
 
-
-
   render() {
-  	console.log(this);
+	
+
+	var badge = this.props.params.badge;
+ 	var orgId = this.props.params.orgID
+
+ 	var officer = this.state.officers.filter(function(obj){
+	  				return obj.badge == badge && obj.orgId == orgId;
+	  	})[0];
+
+
+ 	var userId = officer.userId;
+
+ 	var postResults = this.state.posts.filter(function(obj){
+	  				return obj.userId == userId;
+	  	});
+
+	const PostComponents = postResults.map((p)=>{
+	  		return <Post key={p.postId}{...p}/>;
+	  	});
 
 	return (
 			
 				<div className="postPage container-fluid">
 					<div className="officerSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<p className="policeService">Toronto Police Service</p>
-					<p className="badge">11098</p>
-					<p className="rank">Police Constable</p>
-					<p className="officerName">Zachary Lobsinger</p>
+					<p className="badge">{officer.badge}</p>
+					<p className="rank">{officer.officerRank}</p>
+					<p className="officerName">{""+ officer.firstName + " " + officer.lastName}</p>
 					<img className="serviceImage" src="./assets/img/tps.png" />
 				</div>
 
@@ -72,7 +94,7 @@ export default class OfficerPost extends React.Component
 						<br/>
 						<button>Submit</button>
 					</form>
-					<Post />
+					{PostComponents}
 				</div>
 					
 			</div>
