@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import Post from 'Post';
 export default class OfficerPost extends React.Component 
 {
 	constructor(){
@@ -31,7 +31,7 @@ export default class OfficerPost extends React.Component
   	console.log(this);
 
 	return (
-			<div>
+			
 				<div className="postPage container-fluid">
 					<div className="officerSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<p className="policeService">Toronto Police Service</p>
@@ -71,14 +71,13 @@ export default class OfficerPost extends React.Component
 						</label>
 						<br/>
 						<button>Submit</button>
-						
-					
 					</form>
+					<Post />
 				</div>
 					
 			</div>
 
-		</div>
+		
 
 
 
