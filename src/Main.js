@@ -1,12 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { createBrowserHistory } from 'history'
 
 import Config from './Settings/Config'
 import App from './Components/App'
 import Home from './Components/Home'
 import About from './Components/About'
-import Contact from './Components/Contact'
+import OfficerPosts from './Components/OfficerPosts'
 
 
 
@@ -15,7 +16,7 @@ render((
     <Route path="/" component={App}>
   	  <IndexRoute component={Home} />
 	    <Route path={"about"} component={About}/>
-	    <Route path={"contact"} component={Contact}/>
+	    <Route path={"officerPosts/:orgID/:badge"} component={OfficerPosts}/>
     </Route>
   </Router>
 ), document.getElementById('app'))

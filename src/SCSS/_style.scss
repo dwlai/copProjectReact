@@ -14,6 +14,11 @@
   color:blue;
 }
 
+
+
+/*----------------------------------------
+HOME PAGE
+----------------------------------------*/
 .titleSection{
 	height:300px;
 }
@@ -35,4 +40,40 @@
 .formContent{
 	background-color:red;
 	height:300px;
+
+
+}
+/*---------------------------------
+POST PAGE
+---------------------------------*/
+.postPage{
+
+	position:relative;
+	top:150px;
+}
+
+.officerSection{
+	height:500px;
+	background-color:orange;
+	float:right;
+}
+
+.postSection{
+	height:500px;
+	background-color: grey;
+
+	.optionalFields{
+		max-height:0px;
+		overflow:hidden;
+		transition:1s;
+	}
+	.optionalFields.active{
+		
+		max-height:500px;
+		transition:1s;
+	}
+}
+
+.serviceImage{
+	height:50%;
 }

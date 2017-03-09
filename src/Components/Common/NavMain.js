@@ -27,7 +27,6 @@ export default class MyComponent extends React.Component
           <div id="navbar" className="navbar-collapse collapse">
             <div className="nav navbar-nav navbar-right">
               <NavLink to={"/"} text="Home" title="Home Page" />
-              <NavLink to={"contact"} text="Contact" title="Contact Page" />
               <NavLink to={"about"} text="About" title="About Page" />
             </div>
           </div>
