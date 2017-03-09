@@ -7,12 +7,15 @@ export default class MyComponent extends React.Component
 
   render() {
 
-    let ui = (
-    <div>
-    Welcome to Home Page
-    </div>
-    );
+    
+   
+    
 
-    return ui;
+    return(
+ 		<div>
+    		Welcome to Home Page Dave
+   		 </div>
+
+    	) ;
   }
 }
