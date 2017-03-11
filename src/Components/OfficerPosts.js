@@ -78,7 +78,7 @@ export default class OfficerPost extends React.Component
 
 	createPost(event){
 
-		var badge = this.props.params.badge;
+		var badge = this.props.params.badge;/***************/
 	 	var orgId = this.props.params.orgID
 
 	 	var officer = this.state.officers.filter(function(obj){
