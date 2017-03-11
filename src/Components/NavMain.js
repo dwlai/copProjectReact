@@ -15,7 +15,7 @@ export default class MyComponent extends React.Component
         <div className="container">
 
           <div className="navbar-header">
-              <Link to="/" className="navbar-brand">Those who protect</Link>
+              <Link to="/" id="brandNavLink" className="navbar-brand">Those who protect</Link>
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
@@ -26,8 +26,7 @@ export default class MyComponent extends React.Component
 
           <div id="navbar" className="navbar-collapse collapse">
             <div className="nav navbar-nav navbar-right">
-              <NavLink to={"/"} text="Home" title="Home Page" />
-              <NavLink to={"about"} text="About" title="About Page" />
+              <NavLink to={"/"} text="Home" title="Home Page" className="navLink" />
             </div>
           </div>
 

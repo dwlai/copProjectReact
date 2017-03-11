@@ -17,7 +17,6 @@ export default class OfficerPost extends React.Component
 			email:"",
 			postMessage:"",
 			optionalFields:"optionalFields",
-			officers: OfficerStore.getOfficers(),
 			posts : PostStore.getPosts()
 		}
 
@@ -81,7 +80,8 @@ export default class OfficerPost extends React.Component
 		var badge = this.props.params.badge;/***************/
 	 	var orgId = this.props.params.orgID
 
-	 	var officer = this.state.officers.filter(function(obj){
+
+	 	var officer = OfficerStore.getOfficers().filter(function(obj){
 		  				return obj.badge == badge && obj.orgId == orgId;
 		  	})[0];
 
@@ -99,7 +99,7 @@ export default class OfficerPost extends React.Component
 	var badge = this.props.params.badge;
  	var orgId = this.props.params.orgID
 
- 	var officer = this.state.officers.filter(function(obj){
+ 	var officer = OfficerStore.getOfficers().filter(function(obj){
 	  				return obj.badge == badge && obj.orgId == orgId;
 	  	})[0];
 

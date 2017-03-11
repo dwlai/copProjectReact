@@ -9,12 +9,33 @@
 @import '_variables';
 @import '_mixins';
 
-* {
-  font-family:arial;
-  color:blue;
+/*--------------------------
+NAV BAR
+*---------------------------*/
+
+nav{
+	height: 80px;
 }
 
+.navbar-right{
 
+	margin-top:26px;
+
+}
+
+#brandNavLink{
+
+    font-family: theboldfont;
+    color: black;
+    font-size: 22px;
+    margin-top: 11px;
+}
+
+.navLink{
+
+	font-family: theboldfont;
+	color:black;
+}
 
 /*----------------------------------------
 HOME PAGE
@@ -25,12 +46,14 @@ HOME PAGE
 
 .homeTitle{
 	
+	font-family: $font-title;
 	position:relative;
-	top:100px;
+	top:146px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 5rem
-}
+    font-size: 7vw;
+
+ }
 
 .homeContent{
 	background-color:blue;
