@@ -51,6 +51,7 @@ export default class OfficerPost extends React.Component
 
 	handleFormChange(event){
 		
+
 		var state = this.state;
 		var value = event.target.value;
 		switch(event.target.name){
@@ -76,8 +77,20 @@ export default class OfficerPost extends React.Component
 	
 
 	createPost(event){
+
+		var badge = this.props.params.badge;
+	 	var orgId = this.props.params.orgID
+
+	 	var officer = this.state.officers.filter(function(obj){
+		  				return obj.badge == badge && obj.orgId == orgId;
+		  	})[0];
+
+
+	 	var userId = officer.userId;/**Dont like this but can change once api is in***/
+
 		event.preventDefault();
-		PostActions.createPost();
+		var s = this.state
+		PostActions.createPost(s.posterFirstName, s.reportNumber, s.posterLastName, s.email, s.postMessage, userId);
 	}
 
   render() {

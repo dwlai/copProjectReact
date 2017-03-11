@@ -76,19 +76,20 @@ class PostStore extends EventEmitter{
 		]
 	}
 
-	createPost(text){
+	createPost(userId, posterFirstName, reportNumber, posterLastName, email, postMessage){
 		const id = Date.now();
+		var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
 		this.posts.push({
 
 							postId : id,
-							userId: "1",
-							posterFirstName: "New",
-							posterLastName: "Guy",
-							email:"new@guy.com",
-							reportNumber:"1042234",
-							postMessage:"Good Job Zach!",
-							date:"2017-03-01 21:00:00"
+							userId: userId,
+							posterFirstName: posterFirstName,
+							posterLastName: posterLastName,
+							email: email,
+							reportNumber: reportNumber,
+							postMessage: postMessage,
+							date: date
 						});
 		this.emit("change");
 	}
@@ -102,7 +103,7 @@ class PostStore extends EventEmitter{
 
 		switch(action.type){
 			case "CREATE_POST":{
-				this.createPost();
+				this.createPost(action.userId, action.posterFirstName,action.reportNumber,action.posterLastName, action.email, action.postMessage);
 			}
 		}
 
