@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post';
-import PostStore from "./Common/PostStore";
-import OfficerStore from "./Common/OfficerStore";
+import PostStore from "./Stores/PostStore";
+import OfficerStore from "./Stores/OfficerStore";
 
 export default class OfficerPost extends React.Component 
 {
@@ -15,8 +15,19 @@ export default class OfficerPost extends React.Component
 			posts : PostStore.getPosts()
 		}
 
+	}
+
+	componentWillMount(){
+
+			PostStore.on("change", () =>{
+				var state = this.state;
+				state.posts = PostStore.getPosts();
+				this.setState(state);
+			});
 
 	}
+
+	
 
 	handleChange(){
 		
