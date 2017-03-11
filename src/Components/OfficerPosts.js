@@ -2,6 +2,7 @@ import React from 'react';
 import Post from './Post';
 import PostStore from "./Stores/PostStore";
 import OfficerStore from "./Stores/OfficerStore";
+import * as PostActions from "./Actions/PostActions";
 
 export default class OfficerPost extends React.Component 
 {
@@ -10,6 +11,11 @@ export default class OfficerPost extends React.Component
 		super();
 		this.state = {
 
+			posterFirstName:"",
+			reportNumber:"",
+			posterLastName:"",
+			email:"",
+			postMessage:"",
 			optionalFields:"optionalFields",
 			officers: OfficerStore.getOfficers(),
 			posts : PostStore.getPosts()
@@ -27,19 +33,51 @@ export default class OfficerPost extends React.Component
 
 	}
 
-	
-
 	handleChange(){
 		
 		var state = this.state;
 
 		if(state.optionalFields == "optionalFields"){
-			state.optionalFields = "optionalFields active"
+			state.optionalFields = "optionalFields active";
 		}
-		else
-			state.optionalFields = "optionalFields"
+		else{
+			state.optionalFields = "optionalFields";
+			state.posterLastName = "";
+			state.email="";
+		}
 
 		this.setState(state);
+	}
+
+	handleFormChange(event){
+		
+		var state = this.state;
+		var value = event.target.value;
+		switch(event.target.name){
+			case "posterFirstName":
+				state.posterFirstName = value;
+				break;
+			case "reportNumber":
+				state.reportNumber = value;
+				break;
+			case "posterLastName":
+				state.posterLastName = value;
+				break;
+			case "email":
+				state.email = value;
+				break;
+			case "postMessage":
+				state.postMessage = value;
+			}
+
+		this.setState(state);
+
+	}
+	
+
+	createPost(event){
+		event.preventDefault();
+		PostActions.createPost();
 	}
 
   render() {
@@ -76,14 +114,14 @@ export default class OfficerPost extends React.Component
 
 
 				<div className="postSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					<form>
+					<form method="POST">
 						<label>
 							FirstName:
-							<input name="posterFirstName" type="text" />
+							<input name="posterFirstName" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.posterFirstName} />
 						</label>
 						<label>
 							Report Number:
-							<input name="reportNumber" type="text"/>
+							<input name="reportNumber" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.reportNumber}/>
 						</label>
 						<label> Would you like to hear back from the officer?
 							<input type="checkbox" onChange={this.handleChange.bind(this)} />
@@ -91,19 +129,19 @@ export default class OfficerPost extends React.Component
 						<div className={this.state.optionalFields}>
 							<label>
 								Last Name:
-								<input name="posterLastName" type="text" />
+								<input name="posterLastName" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.posterLastName}/>
 							</label>
 							<label>
 								Email:
-								<input name="email" type="text" />
+								<input name="email" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.email}/>
 							</label>
 						</div>
 						<label>
 							Post Message:
-							<input name="postMessage" type="text"/>
+							<input name="postMessage" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.postMessage}/>
 						</label>
 						<br/>
-						<button>Submit</button>
+						<button onClick={this.createPost.bind(this)}>Submit</button>
 					</form>
 					{PostComponents}
 				</div>
