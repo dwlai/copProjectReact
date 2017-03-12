@@ -19,11 +19,15 @@ NAV BAR
 *---------------------------*/
 
 #mainNav{
-	height: 80px;
-	background:#234d84;
+
+		background:#234d84;
 	a{
 		color:white;
 	}
+}
+
+.navbar-header{
+		height: 80px;
 }
 
 .navbar-right{
@@ -63,9 +67,15 @@ HOME PAGE
 	top:100px;
  }
 
+.homeContainer{
+
+	max-width:1180px;
+	margin-left: auto;
+	margin-right:auto;
+}
 	
 .homeContent{
-	background-color:blue;
+	
 	height:300px;
 }
 
@@ -78,6 +88,7 @@ HOME PAGE
 	background-repeat: no-repeat;
 	position: relative;
 	top: -75px;
+	float: right;
 }
 
 .badgeCop{
@@ -87,62 +98,62 @@ HOME PAGE
     width: 35%;
 }
 
+/*.badgeLabel span{
+
+	position: absolute;
+    left: 44%;
+    top: 26%;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+}*/
+
 .badgeInput{
 	position: absolute;
-    top: 23%;
-    left: 34.5%;
-    width: 29%;
-    height: 11%;
+    top: 31%;
+    left: 36.5%;
+    width: 25%;
+    height: 8%;
     border: solid;
     border-radius: 10px;
-    background-color: $badgeInputBackground;
-    border-width: 6px;
-    border-color: $badgeInputBorderColor;
-    color:$badgeInputBorderColor;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 3vw;
+    border-color: #bc945c;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5vw
 }
 
 .badgeInput:placeholder-shown{
-	font-size:1.5vw;
+	font-size:1vw;
 }
 
 .orgInput{
 
     position: absolute;
-    top: 54%;
+    top: 55%;
     left: 18.5%;
     width: 66%;
-    height: 11%;
+    height: 7%;
     border: solid;
     border-radius: 10px;
-    background-color: #f0e1cb;
-    border-width: 6px;
-    border-color: #bc945c;
-    color: #bc945c;
+    border-color: #5b5d6e;
     text-align: center;
     text-transform: uppercase;
-    font-size: 2vw;
+    font-size: 2vw
 
 }
 
 .badgeButton{
 
-	position: absolute;
-    top: 37%;
-    left: 42.5%;
-    width: 14%;
-    height: 11%;
+    position: absolute;
+    top: 65%;
+    left: 38.5%;
+    width: 21%;
+    height: 7%;
     border: solid;
     border-radius: 10px;
-    background-color: #f0e1cb;
-    border-width: 6px;
-    border-color: #bc945c;
-    color: #bc945c;
+    border-color: #5b5d6e;
     text-align: center;
     text-transform: uppercase;
-    font-size: 2vw;
+    font-size: 2vw
 }
 
 
@@ -195,3 +206,37 @@ POST
 
 	background-color:white;
 }
+
+/*---------------------------
+MEDIA QUERIES
+---------------------------*/
+ @media screen and (max-width: 767px) {
+
+	.formContent{
+		padding-bottom:96%;
+	}
+
+
+	.homeTitle{
+		top:135px;
+	 }
+
+
+	.badgeInput{
+
+		font-size: 3.5vw;
+	}
+	 .badgeInput:placeholder-shown{
+	 	font-size:2vw;
+	 }
+
+	 .orgInput{
+	 	font-size:3.5vw;
+	 }
+
+	 .badgeButton{
+	 	font-size:3.5vw;
+	 }
+}
+
+

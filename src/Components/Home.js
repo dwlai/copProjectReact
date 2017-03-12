@@ -41,16 +41,14 @@ export default class Home extends React.Component
 			 				<p className="homeTitle">Those who protect</p>
 	    	</div>
 
-    		<div className="container-fluid">
-	    		<div className="homeContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
-	    		</div>
+    		<div className="homeContainer container-fluid">
 	    		<div className="formContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 	    			{/*<img className="titleImage" src="./src/Components/security.png" />*/}
 	    			<img className="badgeCop" src="./src/Components/badge.png" />
 
 			    		<Form to={"officerPosts/"+ this.state.orgID +"/"+this.state.badge} method="POST" >
-			    			<label>
+			    			<label className="badgeLabel"> 
 			    				<input className="badgeInput" type="text" placeholder="enter badge" value={this.state.badge} name="badge" onChange={this.handleChange.bind(this)} />
 			    			</label>
 			    			<br/>
@@ -61,9 +59,15 @@ export default class Home extends React.Component
 					    			</select>
 				    		</label>
 			    			<br/>
-			    		<button className="badgeButton" type="submit">Go!</button>
+			    		<button className="badgeButton" type="submit">Search</button>
 			    		</Form>
 	    		</div>
+
+
+
+	    		<div className="homeContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	    		</div>
+	    
     		</div>
 
 
