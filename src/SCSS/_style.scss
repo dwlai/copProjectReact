@@ -10,7 +10,8 @@
 @import '_mixins';
 
 body{
-	/*background: #d2d2d2;*/
+	/*background: #d2d2d2;
+	#ffc36e badge1 255 195 110*/
 }
 
 /*--------------------------
@@ -49,40 +50,107 @@ NAV BAR
 HOME PAGE
 ----------------------------------------*/
 .titleSection{
-	height:500px;
+	height:223px;
 }
 
-.titleContainer{
-	    position: relative;
-	    top: 100px;
-	    
-			.homeTitle{
 
-				font-family: $font-title;
-				font-size: 7vw;
-				position: absolute;
-				left: 17%;
-			 }
+.homeTitle{
 
-			.titleImage{
+	font-family: $font-title;
+	font-size: 7vw;
+	position: absolute;
+	left: 17%;
+	top:100px;
+ }
 
-				position:absolute;
-			   width:44%; 
-			   left:29%;
-			}
-
-}
-
+	
 .homeContent{
 	background-color:blue;
 	height:300px;
 }
 
 .formContent{
-	background-color:#ddd;
-	height:300px;
+	
+	background-image:url("../Components/security.png");
+	height:0px;
+	padding-bottom:49%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	top: -75px;
+}
+
+.badgeCop{
+    position: absolute;
+    left: 31.5%;
+    top: 12%;
+    width: 35%;
+}
+
+.badgeInput{
+	position: absolute;
+    top: 23%;
+    left: 34.5%;
+    width: 29%;
+    height: 11%;
+    border: solid;
+    border-radius: 10px;
+    background-color: $badgeInputBackground;
+    border-width: 6px;
+    border-color: $badgeInputBorderColor;
+    color:$badgeInputBorderColor;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3vw;
+}
+
+.badgeInput:placeholder-shown{
+	font-size:1.5vw;
+}
+
+.orgInput{
+
+    position: absolute;
+    top: 54%;
+    left: 18.5%;
+    width: 66%;
+    height: 11%;
+    border: solid;
+    border-radius: 10px;
+    background-color: #f0e1cb;
+    border-width: 6px;
+    border-color: #bc945c;
+    color: #bc945c;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2vw;
+
+}
+
+.badgeButton{
+
+	position: absolute;
+    top: 37%;
+    left: 42.5%;
+    width: 14%;
+    height: 11%;
+    border: solid;
+    border-radius: 10px;
+    background-color: #f0e1cb;
+    border-width: 6px;
+    border-color: #bc945c;
+    color: #bc945c;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2vw;
+}
 
 
+.titleImage{
+	width: 96%;
+    position: absolute;
+    top: -25%;
+    z-index: -1;
 }
 /*---------------------------------
 POST PAGE
