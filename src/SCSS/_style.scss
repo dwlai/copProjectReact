@@ -9,12 +9,20 @@
 @import '_variables';
 @import '_mixins';
 
+body{
+	/*background: #d2d2d2;*/
+}
+
 /*--------------------------
 NAV BAR
 *---------------------------*/
 
-nav{
+#mainNav{
 	height: 80px;
+	background:#234d84;
+	a{
+		color:white;
+	}
 }
 
 .navbar-right{
@@ -41,19 +49,29 @@ nav{
 HOME PAGE
 ----------------------------------------*/
 .titleSection{
-	height:300px;
+	height:500px;
 }
 
-.homeTitle{
-	
-	font-family: $font-title;
-	position:relative;
-	top:146px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 7vw;
+.titleContainer{
+	    position: relative;
+	    top: 100px;
+	    
+			.homeTitle{
 
- }
+				font-family: $font-title;
+				font-size: 7vw;
+				position: absolute;
+				left: 17%;
+			 }
+
+			.titleImage{
+
+				position:absolute;
+			   width:44%; 
+			   left:29%;
+			}
+
+}
 
 .homeContent{
 	background-color:blue;
@@ -61,7 +79,7 @@ HOME PAGE
 }
 
 .formContent{
-	background-color:red;
+	background-color:#ddd;
 	height:300px;
 
 

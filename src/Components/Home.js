@@ -38,9 +38,12 @@ export default class Home extends React.Component
     return(
  		<div>
  			<div className="titleSection">
-	    		<p className="homeTitle">
-	    			Those who protect
-	    		</p>
+ 				<div className="titleContainer">
+		 				<p className="homeTitle">
+			    			Those who protect
+			    		</p>
+ 						<img className="titleImage" src="./src/Components/security.png" />
+ 				</div>
     		</div>
 
     		<div className="container-fluid">

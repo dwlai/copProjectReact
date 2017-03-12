@@ -11,7 +11,7 @@ export default class MyComponent extends React.Component
    
     return (
 
-      <nav className="navbar navbar-default navbar-fixed-top">
+      <nav id="mainNav" className="navbar navbar-default navbar-fixed-top">
         <div className="container">
 
           <div className="navbar-header">
