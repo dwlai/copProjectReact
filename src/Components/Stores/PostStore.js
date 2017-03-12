@@ -15,7 +15,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Harry",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Zach!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. ",
 							date:"2017-03-01 18:00:00"
 
 						},
@@ -26,7 +26,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Harry",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Zach!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. Suspendisse interdum ex ac massa venenatis, quis suscipit eros consectetur. Vestibulum a urna id nisl elementum vulputate. Suspendisse velit eros, pulvinar ut suscipit a, scelerisque in libero. Vivamus eget lacus nec tellus consequat consequat. Etiam gravida nunc quis pellentesque efficitur. Nulla ligula sem, vulputate",
 							date:"2017-03-01 18:00:00"
 
 						},
@@ -37,7 +37,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Harry",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Zach!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. Suspendisse interdum ex ac massa venenatis, quis suscipit eros consectetur. Vestibulum a urna id nisl elementum vulputate. Suspendisse velit eros, pulvinar ut suscipit a, scelerisque in libero. Vivamus eget lacus nec tellus consequat consequat. Etiam gravida nunc quis pellentesque efficitur. Nulla ligula sem, vulputate",
 							date:"2017-03-01 18:00:00"
 
 						},	{
@@ -47,7 +47,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Iverson",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Bernieasdfadsfasdfadsfsadfasdfasdfsadfasdf!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. Suspendisse interdum ex ac massa venenatis, quis suscipit eros consectetur. Vestibulum a urna id nisl elementum vulputate. Suspendisse velit eros, pulvinar ut suscipit a, scelerisque in libero. Vivamus eget lacus nec tellus consequat consequat. Etiam gravida nunc quis pellentesque efficitur. Nulla ligula sem, vulputate",
 							date:"2017-03-01 18:00:00"
 
 						},
@@ -58,7 +58,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Horry",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Bernie!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. Suspendisse interdum ex ac massa venenatis, quis suscipit eros consectetur. Vestibulum a urna id nisl elementum vulputate. Suspendisse velit eros, pulvinar ut suscipit a, scelerisque in libero. Vivamus eget lacus nec tellus consequat consequat. Etiam gravida nunc quis pellentesque efficitur. Nulla ligula sem, vulputate",
 							date:"2017-03-01 18:00:00"
 
 						},
@@ -69,7 +69,7 @@ class PostStore extends EventEmitter{
 							posterLastName: "Jay",
 							email:"harry@harry.com",
 							reportNumber:"1042234",
-							postMessage:"Good Job Bernie!",
+							postMessage:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit eros a magna tincidunt bibendum. Cras nec nunc nisi. Etiam ultricies sapien est. Nullam malesuada orci sed eros pulvinar efficitur. Sed sed convallis massa. Nullam gravida in libero at bibendum. Aenean viverra ac est in ultrices. Ut venenatis ac erat quis tempor. Nulla vestibulum pulvinar porttitor. Suspendisse interdum ex ac massa venenatis, quis suscipit eros consectetur. Vestibulum a urna id nisl elementum vulputate. Suspendisse velit eros, pulvinar ut suscipit a, scelerisque in libero. Vivamus eget lacus nec tellus consequat consequat. Etiam gravida nunc quis pellentesque efficitur. Nulla ligula sem, vulputate",
 							date:"2017-03-01 18:00:00"
 
 						}

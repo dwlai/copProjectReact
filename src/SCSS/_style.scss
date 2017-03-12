@@ -114,7 +114,6 @@ HOME PAGE
     width: 25%;
     height: 8%;
     border: solid;
-    border-radius: 10px;
     border-color: #bc945c;
     text-align: center;
     text-transform: uppercase;
@@ -133,7 +132,6 @@ HOME PAGE
     width: 66%;
     height: 7%;
     border: solid;
-    border-radius: 10px;
     border-color: #5b5d6e;
     text-align: center;
     text-transform: uppercase;
@@ -166,6 +164,46 @@ HOME PAGE
 /*---------------------------------
 POST PAGE
 ---------------------------------*/
+
+.posted{
+
+	background-color: $postColor;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.postHeader{
+	font-weight: bold;
+}
+
+.postForm{
+
+	background-color: $postColor;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    label{
+
+    	margin-bottom:10px;
+
+		     span{
+		    	margin-right:10px;
+		    }
+	}
+}
+
+.postDate{
+	float:right;
+}
+
+.messageBox{
+
+		width:100%;
+		height:150px;
+      
+}
+
+
 .postPage{
 
 	position:relative;
@@ -174,15 +212,23 @@ POST PAGE
 
 .officerSection{
 	height:500px;
-	background-color:orange;
+	background-color:$postColor;
 	float:right;
+}
+
+.serviceImage{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .postSection{
 	
-	background-color: grey;
 
 	.optionalFields{
+		display:none;
 		max-height:0px;
 		overflow:hidden;
 		transition:1s;
@@ -205,6 +251,10 @@ POST
 .post{
 
 	background-color:white;
+}
+
+.postMessage{
+	word-break: break-all;
 }
 
 /*---------------------------

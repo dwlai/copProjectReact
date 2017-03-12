@@ -11,6 +11,7 @@ class OfficerStore extends EventEmitter{
 							
 							userId: "1",
 							orgId: "1",
+							unit: "Traffic services",
 							badge: "11098",
 							officerRank:"Police Constable",
 							firstName:"Zachary",
@@ -21,6 +22,7 @@ class OfficerStore extends EventEmitter{
 							{
 							userId: "2",
 							orgId: "1",
+							unit: "52 Division",
 							badge: "5383",
 							officerRank:"Police Constable",
 							firstName:"Bernie",
