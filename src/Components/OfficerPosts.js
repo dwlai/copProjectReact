@@ -94,7 +94,7 @@ export default class OfficerPost extends React.Component
 		s.posterFirstName = "";//resets form after submission
 		s.reportNumber = "";
 		s.postMessage = "";
-		this.setState(state);
+		this.setState(s);
 	}
 
   render() {
@@ -122,12 +122,12 @@ export default class OfficerPost extends React.Component
 			
 				<div className="postPage container-fluid">
 					<div className="officerSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					
+					<p className="officerTitle">{officer.officerRank} #{officer.badge}</p>
+					<p className="officerName">{""+ officer.firstName + " " + officer.lastName}</p>
+					{/*<p className="officerEmail">{officer.email}</p>*/}
 					<p className="policeService">Toronto Police Service</p>
 					<p className="unit">{officer.unit}</p>
-					<p className="badge">{officer.badge}</p>
-					<p className="rank">{officer.officerRank}</p>
-					<p className="officerName">{""+ officer.firstName + " " + officer.lastName}</p>
-					<p className="officerEmail">{officer.email}</p>
 					<img className="serviceImage" src="./assets/img/tps.png" />
 				</div>
 
@@ -136,12 +136,12 @@ export default class OfficerPost extends React.Component
 					<div className ="postForm">
 						<form id="usrform" method="POST">
 							<label>
-								<span>Name:</span>
+								<span>Name:<br/></span>
 								<input name="posterFirstName" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.posterFirstName} />
 							</label>
 							<br/>
 							<label>
-								<span>Report Number:</span>
+								<span>Report Number:<br/></span>
 								<input name="reportNumber" type="text" onChange={this.handleFormChange.bind(this)} value={this.state.reportNumber}/>
 							</label>
 							<label style={{"display":"none"}}> Would you like to hear back from the officer?
@@ -162,9 +162,7 @@ export default class OfficerPost extends React.Component
 							<label>
 								Post Message:<br/>
 							</label>
-								<textarea wrap="on" className="messageBox" name="postMessage" form="usrform" onChange={this.handleFormChange.bind(this)} value={this.state.postMessage}>
-								enter text here
-								</textarea>
+								<textarea wrap="on" className="messageBox" name="postMessage" form="usrform" onChange={this.handleFormChange.bind(this)} value={this.state.postMessage} />
 							<br/>
 							<button onClick={this.createPost.bind(this)}>Submit</button>
 						</form>

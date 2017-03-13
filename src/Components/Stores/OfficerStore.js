@@ -16,7 +16,7 @@ class OfficerStore extends EventEmitter{
 							officerRank:"Police Constable",
 							firstName:"Zachary",
 							lastName:"Lobsinger",
-							email:"zach@zach.com"
+							email:"b11098@torontopolice.on.ca"
 
 						},
 							{
@@ -27,9 +27,9 @@ class OfficerStore extends EventEmitter{
 							officerRank:"Police Constable",
 							firstName:"Bernie",
 							lastName:"Gill",
-							email:"bernie@bernie.com"
+							email:"b5383@torontopolice.on.ca"
 
-						}
+							}
 			
 		]
 	}

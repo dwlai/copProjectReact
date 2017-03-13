@@ -216,7 +216,15 @@ POST PAGE
 	height:500px;
 	background-color:$postColor;
 	float:right;
+	padding: 20px;
 }
+
+.officerTitle, .officerName{
+
+			font-size: 2rem;
+		    font-weight: bold;
+
+			}
 
 .serviceImage{
 
