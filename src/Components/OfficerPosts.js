@@ -3,6 +3,9 @@ import Post from './Post';
 import PostStore from "./Stores/PostStore";
 import OfficerStore from "./Stores/OfficerStore";
 import * as PostActions from "./Actions/PostActions";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+
 
 export default class OfficerPost extends React.Component 
 {
@@ -114,6 +117,15 @@ export default class OfficerPost extends React.Component
 	  				return obj.userId == userId;
 	  	}); //gets posts for officer
 
+ 	postResults.sort(function(a,b){
+ 		 var dateA=a.date.toLowerCase(), dateB=b.date.toLowerCase()
+    if (dateA > dateB) //sort string descending
+        return -1 
+    if (dateA < dateB)
+        return 1
+    return 0 //default return value (no sorting)
+ 	});
+
 	const PostComponents = postResults.map((p)=>{
 	  		return <Post key={p.postId}{...p}/>;
 	  	});//creates post components for rendering
@@ -170,7 +182,9 @@ export default class OfficerPost extends React.Component
 							
 
 					</div>	
-					{PostComponents}
+						<ReactCSSTransitionGroup transitionName={"fade"} transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
+						 	{PostComponents}
+						</ReactCSSTransitionGroup>
 				</div>
 					
 			</div>

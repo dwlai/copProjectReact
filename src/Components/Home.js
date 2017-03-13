@@ -66,6 +66,7 @@ export default class Home extends React.Component
 
 
 	    		<div className="homeContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum bibendum imperdiet. Proin suscipit dapibus tellus quis sodales. Cras sagittis pharetra lorem. Pellentesque porttitor ipsum ac purus vulputate, ut lobortis leo ultrices. Sed vestibulum dignissim ante. Mauris eget rutrum arcu, at posuere tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod turpis orci, quis maximus mauris facilisis nec. Nulla ac consequat nunc. Suspendisse gravida dolor lacinia diam tincidunt eleifend. Cras mauris enim, laoreet.</p>
 	    		</div>
 	    
     		</div>
