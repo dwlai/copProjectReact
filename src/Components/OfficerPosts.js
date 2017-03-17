@@ -28,10 +28,13 @@ export default class OfficerPost extends React.Component
 	componentWillMount(){
 
 			PostStore.on("change", () =>{
+				console.log("hello");
 				var state = this.state;
 				state.posts = PostStore.getPosts();
 				this.setState(state);
 			});
+
+			PostActions.load();
 
 	}
 
@@ -114,11 +117,13 @@ export default class OfficerPost extends React.Component
  	var userId = officer.userId;
 
  	var postResults = this.state.posts.filter(function(obj){
-	  				return obj.userId == userId;
+	  				return obj.UserId == userId;
 	  	}); //gets posts for officer
 
+ 	console.log(postResults);
+
  	postResults.sort(function(a,b){
- 		 var dateA=a.date.toLowerCase(), dateB=b.date.toLowerCase()
+ 		 var dateA=a.Date.toLowerCase(), dateB=b.Date.toLowerCase()
     if (dateA > dateB) //sort string descending
         return -1 
     if (dateA < dateB)
@@ -127,7 +132,7 @@ export default class OfficerPost extends React.Component
  	});
 
 	const PostComponents = postResults.map((p)=>{
-	  		return <Post key={p.postId}{...p}/>;
+	  		return <Post key={p.PostID}{...p}/>;
 	  	});//creates post components for rendering
 
 	return (
