@@ -6,8 +6,6 @@ import * as PostActions from "./Actions/PostActions";
 import * as OfficerActions from "./Actions/OfficerActions"
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-
-
 export default class OfficerPost extends React.Component 
 {
 	constructor(){
@@ -130,9 +128,7 @@ export default class OfficerPost extends React.Component
     return 0 //default return value (no sorting)
  	});
 
- 	console.log(postResults);
-
- 	for (var i = 0; i < postResults.length; i++)
+ 	for (var i = 0; i < postResults.length; i++)//formatting date
  	{
  		postResults[i].Date = postResults[i].Date.slice(0, 19).replace('T', ' ');
  	}

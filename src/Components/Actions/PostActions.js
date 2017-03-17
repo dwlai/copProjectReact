@@ -9,8 +9,8 @@ export function createPost(posterFirstName, reportNumber, posterLastName, email,
 
 			'PosterFirstName' : posterFirstName,
 			'ReportNumber' : reportNumber,
-			'PosterLastName' : posterLastName,
-			'Email': email,
+			'PosterLastName' : "NULL",
+			'Email': "NULL",
 			'PostMessage': postMessage,
 			'UserId': userId,
 			'Date' : date
