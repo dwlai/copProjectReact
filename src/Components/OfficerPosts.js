@@ -24,15 +24,7 @@ export default class OfficerPost extends React.Component
 			postMessage:"",
 			optionalFields:"optionalFields",
 			posts : [],
-			officer : { 
-						OfficerRank:"",
-						Badge:"",
-						FirstName:"",
-						LastName:"",
-						Unit:"",
-						UserId:""
-
-						}
+			officer : {}
 		}
 
 	}
@@ -111,18 +103,12 @@ export default class OfficerPost extends React.Component
 
 	createPost(event){
 
-		
-
-
 	 	var officer = this.state.officer;
-
-
+	 	var s = this.state;
 	 	var userId = officer.UserID;
 
-	 	console.log(officer);
-
 		event.preventDefault();
-		var s = this.state;
+		
 		PostActions.createPost(s.posterFirstName, s.reportNumber, s.posterLastName, s.email, s.postMessage, userId);
 		s.posterFirstName = "";//resets form after submission
 		s.reportNumber = "";
@@ -134,7 +120,6 @@ export default class OfficerPost extends React.Component
 	
  	var officer = this.state.officer;
  	var postResults = this.state.posts;
- 	console.log(postResults);
 
  	postResults.sort(function(a,b){
  		 var dateA=a.Date.toLowerCase(), dateB=b.Date.toLowerCase()
@@ -144,6 +129,13 @@ export default class OfficerPost extends React.Component
         return 1
     return 0 //default return value (no sorting)
  	});
+
+ 	console.log(postResults);
+
+ 	for (var i = 0; i < postResults.length; i++)
+ 	{
+ 		postResults[i].Date = postResults[i].Date.slice(0, 19).replace('T', ' ');
+ 	}
 
 	const PostComponents = postResults.map((p)=>{
 	  		return <Post key={p.PostID}{...p}/>;

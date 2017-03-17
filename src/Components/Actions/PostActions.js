@@ -19,17 +19,24 @@ export function createPost(posterFirstName, reportNumber, posterLastName, email,
 	const config = { headers: { 
 					'Content-Type': 'application/json',
 					 'Accept' : 'application/json'} }
-	
 
 	axios.post(uri, data, config )
 			.then( ()=> {
-				dispatcher.dispatch({
-						type: "FETCH_POST_DATA",
-				});
-			});
-			/*.catch( (error) =>{
+			
+						axios(uri).then((data)=>{
+								
+								dispatcher.dispatch({
+
+									type: "FETCH_POST_DATA",
+									data: data.data
+
+								});
+						});
+
+			})
+			.catch( (error) =>{
 				console.log(error);
-			});*/
+			});
 
 }
 
