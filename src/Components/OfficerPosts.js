@@ -29,7 +29,8 @@ export default class OfficerPost extends React.Component
 						Badge:"",
 						FirstName:"",
 						LastName:"",
-						Unit:""
+						Unit:"",
+						UserId:""
 
 						}
 		}
@@ -110,16 +111,15 @@ export default class OfficerPost extends React.Component
 
 	createPost(event){
 
-		var badge = this.props.params.badge;/******Dont like this but can change once api is in*********/
-	 	var orgId = this.props.params.orgID;
+		
 
 
-	 	var officer = OfficerStore.getOfficers().filter(function(obj){
-		  				return obj.badge == badge && obj.orgId == orgId;
-		  	})[0];
+	 	var officer = this.state.officer;
 
 
-	 	var userId = officer.userId;/*************************************************/
+	 	var userId = officer.UserID;
+
+	 	console.log(officer);
 
 		event.preventDefault();
 		var s = this.state;
@@ -134,6 +134,7 @@ export default class OfficerPost extends React.Component
 	
  	var officer = this.state.officer;
  	var postResults = this.state.posts;
+ 	console.log(postResults);
 
  	postResults.sort(function(a,b){
  		 var dateA=a.Date.toLowerCase(), dateB=b.Date.toLowerCase()
