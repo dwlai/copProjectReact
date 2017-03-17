@@ -30,7 +30,7 @@ class PostStore extends EventEmitter{
 	setData(data){
 
 		this.posts = data;
-		this.emit("change");
+		this.emit("changePost");
 	}
 
 	getPosts(){
@@ -44,7 +44,7 @@ class PostStore extends EventEmitter{
 			case "CREATE_POST":
 				this.createPost(action.userId, action.posterFirstName,action.reportNumber,action.posterLastName, action.email, action.postMessage);
 				break;
-			case "FETCH_DATA":
+			case "FETCH_POST_DATA":
 				this.setData(action.data);
 			}
 	}

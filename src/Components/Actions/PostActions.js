@@ -1,5 +1,6 @@
 import dispatcher from "../Dispatcher";
 import axios from "axios";
+
 export function createPost(posterFirstName, reportNumber, posterLastName, email, postMessage, userId){
 	dispatcher.dispatch({
 	type: "CREATE_POST",
@@ -12,13 +13,15 @@ export function createPost(posterFirstName, reportNumber, posterLastName, email,
 });
 }
 
-export function load(){
+export function load(orgID, badge){
 
-	axios("http://copprojectapi20170314101222.azurewebsites.net/api/Posts/1/11098").then((data)=>{
+	var uri = "http://copprojectapi20170314101222.azurewebsites.net/api/Posts/"+ orgID+ "/"+ badge;
+
+	axios(uri).then((data)=>{
 	
 		dispatcher.dispatch({
 
-			type: "FETCH_DATA",
+			type: "FETCH_POST_DATA",
 			data: data.data
 
 		});

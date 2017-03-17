@@ -3,6 +3,7 @@ import Post from './Post';
 import PostStore from "./Stores/PostStore";
 import OfficerStore from "./Stores/OfficerStore";
 import * as PostActions from "./Actions/PostActions";
+import * as OfficerActions from "./Actions/OfficerActions"
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
@@ -12,6 +13,8 @@ export default class OfficerPost extends React.Component
 	constructor(){
 		
 		super();
+		this.getPosts = this.getPosts.bind(this);
+		this.getOfficer = this.getOfficer.bind(this);
 		this.state = {
 
 			posterFirstName:"",
@@ -20,22 +23,46 @@ export default class OfficerPost extends React.Component
 			email:"",
 			postMessage:"",
 			optionalFields:"optionalFields",
-			posts : PostStore.getPosts()
+			posts : [],
+			officer : { 
+						OfficerRank:"",
+						Badge:"",
+						FirstName:"",
+						LastName:"",
+						Unit:""
+
+						}
 		}
 
 	}
 
 	componentWillMount(){
 
-			PostStore.on("change", () =>{
-				console.log("hello");
+			PostStore.on("changePost", this.getPosts);
+			OfficerStore.on("changeOfficer", this.getOfficer);
+			PostActions.load(this.props.params.orgID, this.props.params.badge);
+			OfficerActions.load(this.props.params.orgID, this.props.params.badge);
+
+	}
+
+	componentWillUnmount(){
+		
+		PostStore.removeListener("changePost", this.getPosts);
+		OfficerStore.removeListener("changeOfficer", this.getOfficer);
+	}
+
+	getPosts(){
+
 				var state = this.state;
 				state.posts = PostStore.getPosts();
 				this.setState(state);
-			});
 
-			PostActions.load();
+	}
 
+	getOfficer(){
+			var state = this.state;
+			state.officer = OfficerStore.getOfficer();
+			this.setState(state);
 	}
 
 	handleChange(){
@@ -105,22 +132,8 @@ export default class OfficerPost extends React.Component
 
   render() {
 	
-
-	var badge = this.props.params.badge;
- 	var orgId = this.props.params.orgID
-
- 	var officer = OfficerStore.getOfficers().filter(function(obj){
-	  				return obj.badge == badge && obj.orgId == orgId;
-	  	})[0];//finds officer based on params provided
-
-
- 	var userId = officer.userId;
-
- 	var postResults = this.state.posts.filter(function(obj){
-	  				return obj.UserId == userId;
-	  	}); //gets posts for officer
-
- 	console.log(postResults);
+ 	var officer = this.state.officer;
+ 	var postResults = this.state.posts;
 
  	postResults.sort(function(a,b){
  		 var dateA=a.Date.toLowerCase(), dateB=b.Date.toLowerCase()
@@ -140,11 +153,11 @@ export default class OfficerPost extends React.Component
 				<div className="postPage container-fluid">
 					<div className="officerSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					
-					<p className="officerTitle">{officer.officerRank} #{officer.badge}</p>
-					<p className="officerName">{""+ officer.firstName + " " + officer.lastName}</p>
+					<p className="officerTitle">{officer.OfficerRank} #{officer.Badge}</p>
+					<p className="officerName">{""+ officer.FirstName + " " + officer.LastName}</p>
 					{/*<p className="officerEmail">{officer.email}</p>*/}
 					<p className="policeService">Toronto Police Service</p>
-					<p className="unit">{officer.unit}</p>
+					<p className="unit">{officer.Unit}</p>
 					<img className="serviceImage" src="./assets/img/tps.png" />
 				</div>
 

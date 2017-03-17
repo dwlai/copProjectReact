@@ -1,47 +1,39 @@
 import { EventEmitter } from "events";
+import dispatcher from "../Dispatcher";
 
 class OfficerStore extends EventEmitter{
 
 	constructor(){
 
 		super();
-		this.officers = [
-
-						{
-							
-							userId: "1",
-							orgId: "1",
-							unit: "Traffic services",
-							badge: "11098",
-							officerRank:"Police Constable",
-							firstName:"Zachary",
-							lastName:"Lobsinger",
-							email:"b11098@torontopolice.on.ca"
-
-						},
-							{
-							userId: "2",
-							orgId: "1",
-							unit: "52 Division",
-							badge: "5383",
-							officerRank:"Police Constable",
-							firstName:"Bernie",
-							lastName:"Gill",
-							email:"b5383@torontopolice.on.ca"
-
-							}
-			
-		]
+		this.officer = {}
 	}
 
-	getOfficers(){
+	getOfficer(){
 		
-		return this.officers;
+		return this.officer;
+	}
+
+	setData(data){
+		
+		this.officer = data;
+		this.emit("changeOfficer");
+	}
+
+
+	handleActions(action){
+
+		switch(action.type){
+			case "FETCH_OFFICER_DATA":
+			this.setData(action.data);
+		}
+
+
 	}
 
 
 }
 
 const officerStore = new OfficerStore();
-
+dispatcher.register(officerStore.handleActions.bind(officerStore));
 export default officerStore;
