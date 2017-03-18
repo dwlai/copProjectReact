@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from "react-router";
 import $ from 'jquery';
-import Form from 'react-router-form'
+import Form from 'react-router-form';
+import axios from 'axios';
+import {hashHistory} from "react-router";
 
 export default class Home extends React.Component
 {
@@ -30,6 +32,29 @@ export default class Home extends React.Component
     		this.setState(state);
     	}
 
+    	handleSubmit(e){
+    		e.preventDefault();
+    		if(this.state.badge.trim() == ""){
+    			alert("Please enter a badge");////checks for empty field
+    			return;
+    		}
+
+    		var uri = "http://copprojectapi20170314101222.azurewebsites.net/api/Users/" + this.state.orgID + "/"+ this.state.badge;
+    		
+    		axios(uri).then((data)=>{		/////search for officer in DB
+    		
+    		if(data.data == null)
+    			alert("officer not found please try again");
+    		else
+    			hashHistory.push("/officerPosts/"+ this.state.orgID + "/" + this.state.badge)
+
+    		})
+    		.catch((error)=>{
+    			console.log(error);
+    		});
+
+    	}
+
 
 
 
@@ -47,7 +72,7 @@ export default class Home extends React.Component
 	    			{/*<img className="titleImage" src="./src/Components/security.png" />*/}
 	    			<img className="badgeCop" src="./src/Components/badge.png" />
 
-			    		<Form to={"officerPosts/"+ this.state.orgID +"/"+this.state.badge} method="POST" >
+			    		<Form to={"officerPosts/"+ this.state.orgID +"/"+this.state.badge} method="POST" onSubmit={this.handleSubmit.bind(this)}>
 			    			<label className="badgeLabel"> 
 			    				<input className="badgeInput" type="text" placeholder="enter badge" value={this.state.badge} name="badge" onChange={this.handleChange.bind(this)} />
 			    			</label>

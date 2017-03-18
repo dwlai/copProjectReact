@@ -22,7 +22,12 @@ export default class OfficerPost extends React.Component
 			postMessage:"",
 			optionalFields:"optionalFields",
 			posts : [],
-			officer : {}
+			officer : {
+						FirstName:"",
+						LastName:"",
+						Unit:"",
+						Badge:""
+					}
 		}
 
 	}

@@ -13,6 +13,8 @@ export function load(orgID, badge)
 			data: data.data
 		});
 
+	})
+	.catch( (error) =>{
+				console.log("error");
 	});
-
 }
