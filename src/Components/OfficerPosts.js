@@ -3,8 +3,9 @@ import Post from './Post';
 import PostStore from "./Stores/PostStore";
 import OfficerStore from "./Stores/OfficerStore";
 import * as PostActions from "./Actions/PostActions";
-import * as OfficerActions from "./Actions/OfficerActions"
+import * as OfficerActions from "./Actions/OfficerActions";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Validator from './Validator';
 
 export default class OfficerPost extends React.Component 
 {
@@ -103,21 +104,40 @@ export default class OfficerPost extends React.Component
 
 	}
 	
+	printMsg(msg){
+		alert(msg);
+	}
 
 	createPost(event){
 
-	 	var officer = this.state.officer;
-	 	var s = this.state;
-	 	var userId = officer.UserID;
+		var s = this.state;
+	 	
+	 	var userId = s.officer.UserID;
 
 		event.preventDefault();
-		
+
+		var validator = new Validator();
+
+		var validationResults = new Array();
+
+		validationResults.push(validator.isRequired(s.posterFirstName, this.printMsg,"Enter a name"));
+		validationResults.push(validator.isRequired(s.reportNumber, this.printMsg, "Enter a reportNumber"));
+		validationResults.push(validator.isRequired(s.postMessage, this.printMsg,"Enter a message"));
+
+		for(var i=0; i < validationResults.length ; i++)
+		{
+			if(!validationResults[i])
+				return;
+		}
+			
 		PostActions.createPost(s.posterFirstName, s.reportNumber, s.posterLastName, s.email, s.postMessage, userId);
 		s.posterFirstName = "";//resets form after submission
 		s.reportNumber = "";
 		s.postMessage = "";
 		this.setState(s);
+		
 	}
+	
 
   render() {
 	

@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Form from 'react-router-form';
 import axios from 'axios';
 import {hashHistory} from "react-router";
+import Validator from "./Validator";
 
 export default class Home extends React.Component
 {
@@ -32,13 +33,25 @@ export default class Home extends React.Component
     		this.setState(state);
     	}
 
+    printMsg(msg){
+        alert(msg);
+    }
+
     	handleSubmit(e){
     		e.preventDefault();
-    		if(this.state.badge.trim() == ""){
-    			alert("Please enter a badge");////checks for empty field
-    			return;
-    		}
 
+            var validator = new Validator();
+            var validationResults = new Array();
+
+            validationResults.push(validator.isRequired(this.state.badge, this.printMsg, "Please enter a badge here"));
+            validationResults.push(validator.isNumber(this.state.badge, this.printMsg, "Badge must only contain numbers"));
+
+            for(var i=0; i < validationResults.length; i++)
+            {
+                if(!validationResults[i])
+                    return;
+            }
+                
     		var uri = "http://copprojectapi20170314101222.azurewebsites.net/api/Users/" + this.state.orgID + "/"+ this.state.badge;
     		
     		axios(uri).then((data)=>{		/////search for officer in DB
