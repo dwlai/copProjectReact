@@ -45,26 +45,20 @@ export default class Home extends React.Component
 
             validationResults.push(validator.isRequired(this.state.badge, this.printMsg, "Please enter a badge here"));
             validationResults.push(validator.isNumber(this.state.badge, this.printMsg, "Badge must only contain numbers"));
+            validator.userExists(this.state.badge, this.state.orgID, this.printMsg, "Officer not found please try again", function(bool){
 
-            for(var i=0; i < validationResults.length; i++)
-            {
-                if(!validationResults[i])
-                    return;
-            }
+                validationResults.push(bool);
+                console.log(validationResults);
+                for(var i=0; i < validationResults.length; i++)
+                 {
+                    if(!validationResults[i])
+                     return;
+                }
                 
-    		var uri = "http://copprojectapi20170314101222.azurewebsites.net/api/Users/" + this.state.orgID + "/"+ this.state.badge;
-    		
-    		axios(uri).then((data)=>{		/////search for officer in DB
-    		
-    		if(data.data == null)
-    			alert("officer not found please try again");
-    		else
-    			hashHistory.push("/officerPosts/"+ this.state.orgID + "/" + this.state.badge)
+                 hashHistory.push("/officerPosts/"+ this.state.orgID + "/" + this.state.badge);
+                 }.bind(this));
 
-    		})
-    		.catch((error)=>{
-    			console.log(error);
-    		});
+     
 
     	}
 
