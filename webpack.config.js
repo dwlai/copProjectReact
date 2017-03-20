@@ -8,7 +8,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[id].[hash].bundle.js',
 	path: 'build',
-    publicPath: '/copProjectReact/build/'
+    publicPath: '/build/'
   },
 	plugins: [
 		/*
