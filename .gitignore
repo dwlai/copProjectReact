@@ -1,6 +1,5 @@
-webpack.config.js
+.webpack.config.js
 node_modules
 *.swp
 .DS_Store
 build/*.js
-index.html
