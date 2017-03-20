@@ -75,7 +75,7 @@ export default class Home extends React.Component
 
     		<div className="homeContainer container-fluid">
 	    		<div className="formContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
+	    			<img className="hat" src="./src/Components/security.png" />
 	    			{/*<img className="titleImage" src="./src/Components/security.png" />*/}
 	    			<img className="badgeCop" src="./src/Components/badge.png" />
 
@@ -98,7 +98,13 @@ export default class Home extends React.Component
 
 
 	    		<div className="homeContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
-	    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum bibendum imperdiet. Proin suscipit dapibus tellus quis sodales. Cras sagittis pharetra lorem. Pellentesque porttitor ipsum ac purus vulputate, ut lobortis leo ultrices. Sed vestibulum dignissim ante. Mauris eget rutrum arcu, at posuere tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod turpis orci, quis maximus mauris facilisis nec. Nulla ac consequat nunc. Suspendisse gravida dolor lacinia diam tincidunt eleifend. Cras mauris enim, laoreet.</p>
+		    		<p>
+		    			Welcome to ThoseWhoProtect.ca.  This site is about building positive relationships with your local police service.  
+		    			We know police officers are out there serving the public everyday.  These stories aren't always captured.  
+		    			If you appreciated a service you received from your local police, we want to hear about it.  
+		    			Find the officer you spoke with by entering their badge in the right.
+		    			Post them a message and share your story.
+		    		</p>
 	    		</div>
 	    
     		</div>

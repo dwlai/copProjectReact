@@ -81,13 +81,14 @@ HOME PAGE
 		p{
 		margin-top: 41px;
 	    line-height: 28.5px;
+	    font-size:1.75rem;
 		}
 	
 }
 
 .formContent{
 	
-	background-image:url("../Components/security.png");
+	/*background-image:url("../Components/security.png");*/
 	height:0px;
 	padding-bottom:49%;
 	background-size: contain;
@@ -95,6 +96,15 @@ HOME PAGE
 	position: relative;
 	top: -75px;
 	float: right;
+}
+
+.hat{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
 }
 
 .badgeCop{
@@ -119,15 +129,13 @@ HOME PAGE
     left: 36.5%;
     width: 25%;
     height: 8%;
-    border: solid;
-    border-color: #bc945c;
     text-align: center;
     text-transform: uppercase;
     font-size: 2rem;
 }
 
 .badgeInput:placeholder-shown{
-	font-size:1rem;
+	font-size:1.5rem;
 }
 
 .orgInput{
@@ -137,8 +145,6 @@ HOME PAGE
     left: 18.5%;
     width: 66%;
     height: 7%;
-    border: solid;
-    border-color: #5b5d6e;
     text-align: center;
     text-transform: uppercase;
     font-size: 2rem;
@@ -152,9 +158,6 @@ HOME PAGE
     left: 38.5%;
     width: 21%;
     height: 7%;
-    border: solid;
-    border-radius: 10px;
-    border-color: #5b5d6e;
     text-align: center;
     text-transform: uppercase;
     font-size: 2rem;
