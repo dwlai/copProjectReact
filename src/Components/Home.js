@@ -102,8 +102,7 @@ export default class Home extends React.Component
 		    			Welcome to ThoseWhoProtect.ca.  This site is about building positive relationships with your local police service.  
 		    			We know police officers are out there serving the public everyday.  These stories aren't always captured.  
 		    			If you appreciated a service you received from your local police, we want to hear about it.  
-		    			Find the officer you spoke with by entering their badge in the right.
-		    			Post them a message and share your story.
+		    			Find the officer you spoke with by entering their badge.  Post them a message and share your story.
 		    		</p>
 	    		</div>
 	    
