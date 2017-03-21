@@ -165,14 +165,16 @@ export default class OfficerPost extends React.Component
 	return (
 			
 				<div className="postPage container-fluid">
-					<div className="officerSection col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					
-					<p className="officerTitle">{officer.OfficerRank} #{officer.Badge}</p>
-					<p className="officerName">{""+ officer.FirstName + " " + officer.LastName}</p>
-					{/*<p className="officerEmail">{officer.email}</p>*/}
-					<p className="policeService">Toronto Police Service</p>
-					<p className="unit">{officer.Unit}</p>
-					<img className="serviceImage" src="./assets/img/tps.png" />
+				
+				<div className="officerSectionContainer col-xs-12 col-sm-6 col-md-6 col-lg-6"> 
+					<div className="officerSection ">
+						<p className="officerTitle">{officer.OfficerRank} #{officer.Badge}</p>
+						<p className="officerName">{""+ officer.FirstName + " " + officer.LastName}</p>
+						{/*<p className="officerEmail">{officer.email}</p>*/}
+						<p className="policeService">Toronto Police Service</p>
+						<p className="unit">{officer.Unit}</p>
+						<img className="serviceImage" src="./assets/img/tps.png" />
+					</div>
 				</div>
 
 
