@@ -48,7 +48,7 @@ export default class Home extends React.Component
             validator.userExists(this.state.badge, this.state.orgID, this.printMsg, "Officer not found please try again", function(bool){
 
                 validationResults.push(bool);
-                console.log(validationResults);
+               
                 for(var i=0; i < validationResults.length; i++)
                  {
                     if(!validationResults[i])
@@ -56,7 +56,7 @@ export default class Home extends React.Component
                 }
                 
                  hashHistory.push("/officerPosts/"+ this.state.orgID + "/" + this.state.badge);
-                 }.bind(this));
+                 }.bind(this));// call back function to fire after ajax request is completed to check for user in DB
 
      
 
