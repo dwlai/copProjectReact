@@ -218,11 +218,14 @@ POST PAGE
 	position:relative;
 	top:150px;
 }
+.officerSectionContainer{
+
+	margin-bottom: 15px;
+}
 
 .officerSection{
 	height:500px;
 	background-color:$postColor;
-	float:right;
 	padding: 20px;
 }
 
@@ -288,6 +291,9 @@ MEDIA QUERIES
 		top:135px;
 	 }
 
+	 .homeContent p{
+	 	margin-top: -100px;
+	 }
 
 	.badgeInput{
 
@@ -307,9 +313,19 @@ MEDIA QUERIES
 
 	 .homeTitle{
 
-
     font-size: 7vw;
    
+ 	}
+
+ 	.officerSection{
+
+ 		height:260px;
+ 	}
+
+ 	.serviceImage{
+ 		margin-right: 0px;
+ 		position: relative;
+ 		top:-30px;
  	}
 }
 
