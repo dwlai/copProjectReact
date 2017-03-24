@@ -77,7 +77,7 @@ export default class Home extends React.Component
 	    		<div className="formContent col-xs-12 col-sm-6 col-md-6 col-lg-6">
 	    			<img className="hat" src="./src/Components/security.png" />
 	    			{/*<img className="titleImage" src="./src/Components/security.png" />*/}
-	    			<img className="badgeCop" src="./src/Components/badge.png" />
+	    			
 
 			    		<Form to={"officerPosts/"+ this.state.orgID +"/"+this.state.badge} method="POST" onSubmit={this.handleSubmit.bind(this)}>
 			    			<label className="badgeLabel"> 
