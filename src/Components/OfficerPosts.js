@@ -1,8 +1,6 @@
 import React from 'react';
 import Post from './Post';
-import PostStore from "./Stores/PostStore";
 import OfficerStore from "./Stores/OfficerStore";
-import * as PostActions from "./Actions/PostActions";
 import * as OfficerActions from "./Actions/OfficerActions";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Validator from './Validator';
@@ -12,7 +10,7 @@ export default class OfficerPost extends React.Component
 	constructor(){
 		
 		super();
-		this.getPosts = this.getPosts.bind(this);
+
 		this.getOfficer = this.getOfficer.bind(this);
 		this.state = {
 
@@ -27,7 +25,8 @@ export default class OfficerPost extends React.Component
 						FirstName:"",
 						LastName:"",
 						Unit:"",
-						Badge:""
+						Badge:"",
+						Posts:[]
 					}
 		}
 
@@ -35,26 +34,19 @@ export default class OfficerPost extends React.Component
 
 	componentWillMount(){
 
-			PostStore.on("changePost", this.getPosts);
+			
 			OfficerStore.on("changeOfficer", this.getOfficer);
-			PostActions.load(this.props.params.orgID, this.props.params.badge);
+		
 			OfficerActions.load(this.props.params.orgID, this.props.params.badge);
 
 	}
 
 	componentWillUnmount(){
 		
-		PostStore.removeListener("changePost", this.getPosts);
+
 		OfficerStore.removeListener("changeOfficer", this.getOfficer);
 	}
 
-	getPosts(){
-
-				var state = this.state;
-				state.posts = PostStore.getPosts();
-				this.setState(state);
-
-	}
 
 	getOfficer(){
 			var state = this.state;
@@ -130,7 +122,7 @@ export default class OfficerPost extends React.Component
 				return;
 		}
 			
-		PostActions.createPost(s.posterFirstName, s.reportNumber, s.posterLastName, s.email, s.postMessage, userId);
+		OfficerActions.createPost(s.posterFirstName, s.reportNumber, s.posterLastName, s.email, s.postMessage, userId, this.props.params.badge, this.props.params.orgID);
 		s.posterFirstName = "";//resets form after submission
 		s.reportNumber = "";
 		s.postMessage = "";
@@ -142,7 +134,7 @@ export default class OfficerPost extends React.Component
   render() {
 	
  	var officer = this.state.officer;
- 	var postResults = this.state.posts;
+ 	var postResults = officer.Posts;
 
  	postResults.sort(function(a,b){
  		 var dateA=a.Date.toLowerCase(), dateB=b.Date.toLowerCase()

@@ -22,7 +22,7 @@ class OfficerStore extends EventEmitter{
 
 
 	handleActions(action){
-
+	
 		switch(action.type){
 			case "FETCH_OFFICER_DATA":
 			this.setData(action.data);

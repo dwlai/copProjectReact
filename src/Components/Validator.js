@@ -27,10 +27,10 @@ export default class Validator{
 	userExists(badge, orgID, printMsg, error, callback){
 
 	if(/^\d+$/.test(badge)){//makes sure its a number to pass to server
-			var uri = "http://copprojectapi20170314101222.azurewebsites.net/api/Users/" + orgID + "/"+ badge;
+			var uri = "http://thosewhoprotectapi20170323102141.azurewebsites.net/api/Users/" + orgID + "/"+ badge;
     		
     		axios(uri).then((data)=>{		/////search for officer in DB
-    		
+    
     		if(data.data == null){
     			printMsg(error);
     			callback(false);
